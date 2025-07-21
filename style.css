@@ -1,0 +1,384 @@
+/* Import Font dari Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* --- Reset & Variabel Global --- */
+:root {
+    --primary-color: #2c3e50; /* Warna gelap */
+    --secondary-color: #f39c12; /* Warna aksen oranye */
+    --background-color: #ffffff; /* Latar belakang abu-abu muda */
+    --surface-color: #ffffff; /* Warna dasar elemen */
+    --text-color: #34495e; /* Warna teks utama */
+    --border-radius: 8px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* --- Header & Navigasi --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: var(--surface-color);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+.logo i {
+    color: var(--secondary-color);
+    margin-right: 8px;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    /* Jarak antar menu diperlebar dari 1rem menjadi 1.5rem */
+    margin: 0 1.5rem; 
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+/* Efek hover hanya mengubah warna teks */
+.nav-links a:hover {
+    color: var(--secondary-color); /* Warna oranye saat hover */
+}
+
+.nav-actions .login-btn {
+    font-size: 1.2rem;
+    margin-right: 1rem;
+    color: var(--primary-color);
+}
+.nav-actions .rent-btn {
+    background-color: var(--primary-color);
+    color: rgb(255, 255, 255);
+    padding: 0.6rem 1.2rem;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* GANTI SELURUH BLOK INI DI style.css */
+
+.hero-section {
+    position: relative; /* Diperlukan agar overlay bisa diposisikan */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 60vh;
+    background: url('https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?q=80&w=2070') no-repeat center center/cover;
+    color: rgb(255, 255, 255);
+    overflow: hidden; /* Penting agar gradasi tidak bocor keluar */
+}
+
+/* Lapisan Gelap untuk Efek Spotlight */
+.spotlight-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+        circle 200px at center, /* Ukuran sorotan awal */
+        rgba(0, 0, 0, 0) 0%, /* Tengah transparan */
+        rgba(0, 0, 0, 0.6) 100% /* Tepi gelap */
+    );
+    pointer-events: none; /* Agar tidak menghalangi klik pada tombol */
+    transition: background 0.1s ease-out; /* Transisi halus */
+}
+
+/* Konten Asli (Teks dan Tombol) */
+.hero-content {
+    position: relative; /* Agar berada di atas lapisan gelap */
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content .quote {
+    font-style: italic;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+}
+
+.hero-btn {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+}
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+}
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+.hero-btn {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* --- Product Section --- */
+.product-section {
+    padding: 4rem 5%;
+    text-align: center;
+}
+.product-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+}
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+.product-card {
+    /* ... kode CSS yang sudah ada ... */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transisi untuk efek hover */
+}
+
+/* Efek hover untuk product-card */
+.product-card:hover {
+    transform: translateY(-5px); /* Sedikit naik saat hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Bayangan lebih besar saat hover */
+}
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.product-card h3 {
+    font-size: 1.2rem;
+    margin: 1rem 1rem 0.5rem;
+}
+.product-card .price {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin: 0 1rem 1rem;
+}
+
+/* --- Registration Section --- */
+.registration-section {
+    background-color: var(--surface-color);
+    padding: 4rem 5%;
+}
+.registration-container {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+.registration-container h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+}
+.form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+.form-group input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+}
+.submit-btn {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* GANTI CSS FOOTER LAMA DENGAN KODE INI */
+.main-footer-bottom {
+    background-color: var(--primary-color);
+    color: #ccc; /* Warna teks abu-abu terang */
+    padding: 3rem 5%;
+    text-align: center;
+}
+
+.contact-info h3 {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 1.5rem;
+}
+
+.contact-info p {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.contact-info i {
+    color: var(--secondary-color); /* Warna aksen untuk ikon */
+    margin-right: 10px;
+    width: 20px; /* Agar ikon lebih rapi */
+    text-align: center;
+}
+
+.contact-info a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: #fff; /* Warna berubah saat disentuh kursor */
+}
+
+.copyright {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #444; /* Garis pemisah */
+    font-size: 0.9rem;
+    color: #888;
+}
+}
+/* --- Success Message --- */
+.success-message {
+    display: none; /* Penting: Sembunyikan secara default */
+    text-align: center;
+    padding: 2rem;
+    border: 2px solid #2ecc71; /* Warna hijau tanda sukses */
+    background-color: #e8f5e9;
+    color: #27ae60;
+    border-radius: var(--border-radius);
+}
+.success-message h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* ... Kode CSS yang sudah ada ... */
+
+/* Efek hover pada tombol */
+.hero-btn:hover, .submit-btn:hover, .rent-btn:hover {
+    background-color: #e63600; /* Warna oranye yang lebih gelap saat hover */
+}
+
+/* Kutipan di bawah judul hero banner */
+.hero-content .quote {
+    font-style: italic;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    opacity: 0.8; /* Sedikit transparan */
+}
+
+/* GANTI SELURUH BLOK CSS TAGLINE DENGAN INI */
+.tagline-section {
+    position: relative; /* Penting untuk video background */
+    padding: 8rem 2rem;
+    text-align: center;
+    overflow: hidden; /* Sembunyikan video yang meluber */
+}
+
+/* Video sebagai background */
+.tagline-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 0; /* Letakkan di belakang */
+    filter: brightness(0.7); /* Agar video sedikit gelap dan teks terbaca */
+}
+
+/* Konten teks */
+.tagline-content {
+    position: relative; /* Agar berada di atas video */
+    z-index: 1;
+}
+
+.tagline-section p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.2rem;
+    line-height: 1.6;
+    color: #ffffff; /* Warna teks diubah menjadi terang */
+    font-weight: 800;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* EFEK HOVER GRADASI UNGU */
+.tagline-section .highlight:hover {
+    /* Trik untuk membuat teks menjadi gradasi */
+    background: linear-gradient(45deg, #ff0101, #af03ff, #002fff);
+    -webkit-background-clip: text; /* Klip gradasi ke bentuk teks (untuk browser Webkit) */
+    background-clip: text;
+    color: transparent; /* Membuat warna teks asli transparan agar gradasi terlihat */
+}
+
+/* --- Tombol Mute Audio --- */
+.mute-btn {
+    position: fixed; /* Tetap di posisi yang sama saat di-scroll */
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000; /* Pastikan berada di atas elemen lain */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Membuatnya bulat */
+    border: none;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease;
+}
+
+.mute-btn:hover {
+    background-color: var(--secondary-color);
+}

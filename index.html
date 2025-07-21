@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campkit - Sewa Alat Camping</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <audio id="background-music" autoplay loop>
+        <source src="campkitio/hutan.mp3" type="audio/mpeg">
+        
+    </audio>
+
+    <button id="mute-button" class="mute-btn">
+        <i class="fa-solid fa-volume-high"></i>
+        <i class="fa-solid fa-volume-xmark" style="display: none;"></i>
+    </button>
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fa-solid fa-campground"></i>
+                <span>campkit</span>
+            </div>
+            <div class="nav-links">
+                <a href="#">Beranda</a>
+                <a href="#">Kategori</a>
+                <a href="#">Tentang Kami</a>
+            </div>
+            <div class="nav-actions">
+                <a href="#register" class="login-btn"><i class="fa-regular fa-user"></i></a>
+                <a href="#register" class="hero-btn">SIGN IN</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+    <div class="spotlight-overlay"></div>
+
+    <div class="hero-content">
+        <h1>Campkit</h1>
+        <p>Sewa Peralatan Camping Terbaik untuk Petualangan Anda</p>
+        <p class="quote">"Petualangan dimulai di sini."</p>
+        <a href="#products" class="hero-btn">Rent Now</a>
+    </div>
+</section>
+
+        <section id="products" class="product-section">
+            <h2>Best Product</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <a href="#register">
+                    <img src="https://antarestar.com/wp-content/uploads/2021/01/Tenda-Camping-200-x-200-2.png" alt="Produk Camping">
+                    </a>
+                    <h3>Tenda Pro 2P</h3>
+                    <p class="price">Rp 45.000 / hari</p>
+                </div>
+                <div class="product-card">
+                    <a href="#register">
+                    <img src="https://areioutdoorgear.co.id/wp-content/uploads/2024/05/WhatsApp-Image-2024-09-19-at-10.19.47-1000x1000.jpeg" alt="Produk Camping">
+                    </a>
+                    <h3>Carrier 60L</h3>
+                    <p class="price">Rp 35.000 / hari</p>
+                </div>
+                <div class="product-card">
+                    <a href="#register">
+                    <img src="https://amerikaniki-agora.gr/wp-content/uploads/2020/11/210-6028-12.jpg" alt="Produk Camping">
+                    </a>
+                    <h3>Sleeping Bag Comfort</h3>
+                    <p class="price">Rp 30.000 / hari</p>
+                </div>
+                <div class="product-card">
+                    <a href="#register">
+                    <img src="https://image.utamamega.co.id/s3/productimages/webp/co4584/p51997/w600-h600/908f8cdd-c746-4b28-9d5d-daba3c7861ff.jpg" alt="Produk Camping">
+                    </a>
+                    <h3>Kompor Portable</h3>
+                    <p class="price">Rp 15.000 / hari</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="tagline-section">
+    <video autoplay muted loop playsinline class="tagline-video">
+        <source src="campkitio/kemah.mp4" type="video/mp4">
+        
+    </video>
+
+    <div class="tagline-content">
+        <p>
+            <span class="highlight">Sewa online dan sewa ditempat.</span><span class="highlight">Sewa harian dan mingguan.</span><span class="highlight">Sewakan untuk perorangan dan acara.</span><span class="highlight">Pesan lewat website dan aplikasi.</span>
+        </p>
+    </div>
+</section>
+
+        <section id="register" class="registration-section">
+            <div class="registration-container">
+                <form class="registration-form" id="registrationForm">
+                    <h2>Join Campkit & Mulai Petualanganmu!</h2>
+                    <div class="form-group">
+                        <label for="fullname">Full Name</label>
+                        <input type="text" id="fullname" name="fullname" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <button type="submit" class="submit-btn">Create Account</button>
+                </form>
+                
+                <div id="successMessage" class="success-message">
+                    </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer-bottom">
+    <div class="footer-content">
+        <div class="contact-info">
+            <h3>Hubungi Kami</h3>
+            <p><i class="fa-solid fa-location-dot"></i> Kayutangi, Banjarmasin Utara, Kalimantan Selatan</p>
+            <p><i class="fa-solid fa-phone"></i> 0832-6577-66767</p>
+            <p><i class="fa-brands fa-instagram"></i> <a href="https://www.instagram.com/campkit.id" target="_blank">campkit.id</a></p>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Campkit. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
